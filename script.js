@@ -36,8 +36,24 @@ function getHumanChoice() {
     Input: none at first, but will take input through a prompt
     Output: return one of the valid choices ("rock", "paper", or "scissors") depending on what the user inputs
     Pseudocode:
-    - Initialize a variable choice to 0.
-    - Get the user choice: 1 for "rock", 2 for "paper", or 3 for "scissors", and store this value in choice
-    - Return the appropriate string for the user choice, with appropriate logic for wrong values
     */
+
+    // Initialize a variable choice to 0.
+    let choice = 0;
+    // Get the user choice: 1 for "rock", 2 for "paper", or 3 for "scissors", and store this value in choice
+    choice = +prompt("Enter a digit (1 for ROCK, 2 for PAPER, or 3 for SCISSORS) : ");
+    // Return the appropriate string for the user choice, with appropriate logic for wrong values
+    switch(choice) {
+        case 1:
+            return "rock";
+            break;
+        case 2:
+            return "paper";
+            break;
+        case 3:
+            return "scissors";
+            break;
+        default:
+            return "Wrong choice!";
+    }
 }
