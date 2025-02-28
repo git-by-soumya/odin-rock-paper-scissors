@@ -27,6 +27,10 @@ function getComputerChoice() {
     else if (randomResult >= 7 && randomResult <= 9) {
         return "scissors";
     }
+    //This else statement is technically unreachable with the current logic, but it's here to handle unexpected cases.
+    else {
+        return "Wrong choice!";
+    }
 }
 
 function getHumanChoice() {
@@ -134,21 +138,47 @@ function playGame() {
     Plan:
     Play 5 rounds by calling playRound 5 times
     Pseudocode:
-    - Loop (5 times) where sentry (loop control variable) = 1, start = 1, end = 5, inclusive, change/update value = +1
-        Declare and initialize variables humanSelection and computerSelection by calling functions getHumanChoice and getComputerChoice
-        If humanSelection and computerSelection have contents equal to any of the following 3 string values: "rock", "paper", or "scissors"
-            Call function playRound and pass it humanSelection and computerSelection as arguments
-        Else
-            Display message "Wrong choice! Exiting game."
-            Break from the loop
-        End if
-      End loop
-    - If human score is greater than computer score
-        Display "You win the game!" and append scores at the end
-      Else if computer score is greater than human score
-        Display "Computer wins the game!" and append scores at the end
-      Else
-        Display "The game is a draw." and append scores at the end
-      End if
     */
+
+    // Loop (5 times) where sentry (loop control variable) = 1, start = 1, end = 5, inclusive, change/update value = +1
+    for (let i = 1; i <= 5; i++) {
+        // Declare and initialize variables humanSelection and computerSelection by calling functions getHumanChoice and getComputerChoice
+        let humanSelection = getHumanChoice();
+        let computerSelection = getComputerChoice();
+        // If humanSelection and computerSelection have contents equal to any of the following 3 string values: "rock", "paper", or "scissors"
+        if ( (humanSelection === "rock" || 
+            humanSelection === "paper" || 
+            humanSelection === "scissors") 
+            && 
+            (computerSelection === "rock" || 
+                computerSelection === "paper" || 
+                computerSelection === "scissors") 
+            ) {
+                // Call function playRound and pass it humanSelection and computerSelection as arguments
+                playRound(humanSelection, computerSelection);
+            } 
+        // Else
+        //  Display message "Wrong choice! Exiting game."
+        //  Break from the loop
+        else {
+            console.log("Wrong choice! Exiting game.");
+            break;
+        }
+    }
+    //If human score is greater than computer score
+    //  Display "You win the game!" and append scores at the end
+    if (humanScore > computerScore) {
+        console.log(`You win the game! Human score: ${humanScore}, Computer score: ${computerScore}`);
+    }
+    //Else if computer score is greater than human score
+    //  Display "Computer wins the game!" and append scores at the end
+    else if (computerScore > humanScore) {
+        console.log(`Computer wins the game! Computer score: ${computerScore}, Human score: ${humanScore}`);
+    }
+    //Else
+    //  Display "The game is a draw." and append scores at the end
+    else {
+        console.log(`The game is a draw. Computer score: ${computerScore}, Human score: ${humanScore}`);
+    }
+    //End if
 }
