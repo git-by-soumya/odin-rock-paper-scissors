@@ -113,7 +113,6 @@ function playGame() {
             ++humanScore;
         }
         
-        
         // Else if human choice is "scissors" and
         //    If computer choice is "rock"
         //        Display the following message: "You lose! Rock beats Scissors"
@@ -130,4 +129,26 @@ function playGame() {
             ++humanScore;
         }
     }
+
+    /*
+    Plan:
+    Play 5 rounds by calling playRound 5 times
+    Pseudocode:
+    - Loop (5 times) where sentry (loop control variable) = 1, start = 1, end = 5, inclusive, change/update value = +1
+        Declare and initialize variables humanSelection and computerSelection by calling functions getHumanChoice and getComputerChoice
+        If humanSelection and computerSelection have contents equal to any of the following 3 string values: "rock", "paper", or "scissors"
+            Call function playRound and pass it humanSelection and computerSelection as arguments
+        Else
+            Display message "Wrong choice! Exiting game."
+            Break from the loop
+        End if
+      End loop
+    - If human score is greater than computer score
+        Display "You win the game!" and append scores at the end
+      Else if computer score is greater than human score
+        Display "Computer wins the game!" and append scores at the end
+      Else
+        Display "The game is a draw." and append scores at the end
+      End if
+    */
 }
