@@ -28,3 +28,16 @@ function getComputerChoice() {
         return "scissors";
     }
 }
+
+function getHumanChoice() {
+    /*
+    Plan:
+    UI: console
+    Input: none at first, but will take input through a prompt
+    Output: return one of the valid choices ("rock", "paper", or "scissors") depending on what the user inputs
+    Pseudocode:
+    - Initialize a variable choice to 0.
+    - Get the user choice: 1 for "rock", 2 for "paper", or 3 for "scissors", and store this value in choice
+    - Return the appropriate string for the user choice, with appropriate logic for wrong values
+    */
+}
