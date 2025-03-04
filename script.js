@@ -79,7 +79,7 @@ function playGame() {
         }
     }
 
-    for (let i = 1; i <= 5; i++) {
+    for (let i = 1; ; i++) {
         let humanSelection = getHumanChoice();
         let computerSelection = getComputerChoice();
         
