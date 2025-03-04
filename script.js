@@ -11,7 +11,10 @@ function getComputerChoice() {
     else if (randomResult >= 7 && randomResult <= 9) {
         return "scissors";
     }
-    //This else statement is technically unreachable with the current logic, but it's here to handle unexpected cases.
+    /*
+    This else statement is technically unreachable with the current logic, 
+    but it's here to handle unexpected cases.
+    */
     else {
         return "Wrong choice!";
     }
@@ -19,7 +22,9 @@ function getComputerChoice() {
 
 function getHumanChoice() {
     let choice = 0;
-    choice = +prompt("Enter a digit (1 for ROCK, 2 for PAPER, or 3 for SCISSORS) : ");
+    choice = +prompt(
+        "Enter a digit (1 for ROCK, 2 for PAPER, or 3 for SCISSORS) : "
+    );
 
     switch(choice) {
         case 1:
@@ -95,12 +100,18 @@ function playGame() {
     }
     
     if (humanScore > computerScore) {
-        console.log(`You win the game! Human score: ${humanScore}, Computer score: ${computerScore}`);
+        console.log(
+            "You win the game! " + 
+            `Human score: ${humanScore}, Computer score: ${computerScore}`);
     }
     else if (computerScore > humanScore) {
-        console.log(`Computer wins the game! Computer score: ${computerScore}, Human score: ${humanScore}`);
+        console.log(
+            "Computer wins the game! " + 
+            `Computer score: ${computerScore}, Human score: ${humanScore}`);
     }
     else {
-        console.log(`The game is a draw. Computer score: ${computerScore}, Human score: ${humanScore}`);
+        console.log(
+            "The game is a draw. " + 
+            `Computer score: ${computerScore}, Human score: ${humanScore}`);
     }
 }
