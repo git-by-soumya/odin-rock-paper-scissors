@@ -45,9 +45,11 @@ function displayWinner() {
 function displayResult(string) {
     const divRef = document.querySelector(".result-display");
     const paraRef = document.querySelector(".running-score");
+
     divRef.textContent = string;
     paraRef.textContent = 
     `Human score: ${humanScore}, Computer score: ${computerScore}`;
+    
     if(humanScore === 5 || computerScore === 5) {
         displayWinner();
     }
@@ -110,73 +112,3 @@ function buttonEventHandler(event) {
 
 const doc = document;
 doc.addEventListener("click", buttonEventHandler);
-
-/*
-const buttons = document.querySelectorAll("button");
-buttons.forEach((button) => {
-    button.addEventListener("click", buttonEventHandler);
-});
-*/
-
-/*
-function playGame() {
-    for (let i = 1; ; i++) {
-        let humanSelection = getHumanChoice();
-        let computerSelection = getComputerChoice();
-        
-        if ( (humanSelection === "rock" || 
-            humanSelection === "paper" || 
-            humanSelection === "scissors") 
-            && 
-            (computerSelection === "rock" || 
-                computerSelection === "paper" || 
-                computerSelection === "scissors") 
-            ) {
-                playRound(humanSelection, computerSelection);
-        } 
-        else {
-            console.log("Wrong choice! Exiting game.");
-            break;
-        }
-    }
-    
-    if (humanScore > computerScore) {
-        console.log(
-            "You win the game! " + 
-            `Human score: ${humanScore}, Computer score: ${computerScore}`);
-    }
-    else if (computerScore > humanScore) {
-        console.log(
-            "Computer wins the game! " + 
-            `Computer score: ${computerScore}, Human score: ${humanScore}`);
-    }
-    else {
-        console.log(
-            "The game is a draw. " + 
-            `Computer score: ${computerScore}, Human score: ${humanScore}`);
-    }
-}
-*/
-
-/*
-function getHumanChoice() {
-    let choice = 0;
-    choice = +prompt(
-        "Enter a digit (1 for ROCK, 2 for PAPER, or 3 for SCISSORS) : "
-    );
-
-    switch(choice) {
-        case 1:
-            return "rock";
-            break;
-        case 2:
-            return "paper";
-            break;
-        case 3:
-            return "scissors";
-            break;
-        default:
-            return "Wrong choice!";
-    }
-}
-*/
